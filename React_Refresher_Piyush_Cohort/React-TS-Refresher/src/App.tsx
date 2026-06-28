@@ -1,4 +1,5 @@
 import './App.css'
+import Counter from './components/Counter';
 import { useRandomUser } from './hooks/user-random'
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
                     <p>Loading...</p>
                 ) : (<h1>{user.name.first} {user.name.last}</h1>)
             ) : "No User Fetched Yet"}
+
+            {new Array(10).fill(null).map(() => <Counter />)}  {/*Render 10 Counter components using map */}
         </>
     )
 }
